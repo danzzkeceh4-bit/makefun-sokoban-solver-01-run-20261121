@@ -47,7 +47,14 @@ then to an empty (valid, zero-point) answer rather than nothing at all.
 only i001) in ~0.6 s for the whole set, deterministic across runs. The
 solver was also stress-tested on 20 further sets drawn with the kit's own
 generator: all 20 scored 1,000,000, worst set 1.1 s — far inside the 60 s
-wall budget.
+wall budget. Verified with the kit's own grader
+(`grade-local --driver process`): score 1,000,000, passed 1, two
+executions, result_sha256
+`ed403c781271603fe2bdf8ca4c2239156bc38c6e50c387163ebc241d1d29786b`
+(action_log_sha256
+`198a76e8076541bc2234b98e0d6290fcb72f59c490672ce9b2515606ada00047`;
+the result hash differs from the server's only because the local run
+used Node v24.22.1 while the harness records v26.13.1).
 
 ## Run it
 
